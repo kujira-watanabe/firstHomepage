@@ -2,7 +2,7 @@ import { Quote } from "lucide-react"
 
 export function InstructorSection() {
   return (
-    <section id="instructor" className="py-20 lg:py-28 border-b border-border">
+      <section id="instructor" className="scroll-mt-20 lg:scroll-mt-24 py-20 lg:py-28 border-b border-border">
       <div className="mx-auto max-w-6xl px-4 lg:px-6">
         <div className="text-center mb-16">
           <p className="font-mono text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-3">
@@ -15,11 +15,11 @@ export function InstructorSection() {
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
           {/* Profile Image Area */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 lg:min-w-0">
             <div className="relative">
-              <div className="aspect-[4/5] bg-primary/5 rounded-xl border border-border flex items-center justify-center">
+              <div className="aspect-[4/5] bg-primary/5 rounded-xl border border-border flex items-center justify-center relative overflow-hidden">
                 <div className="text-center space-y-4 p-8">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+                  <div className="w-32 h-32 mx-auto rounded-full bg-primary text-primary-foreground flex items-center justify-center shrink-0">
                     <span className="text-4xl font-black">渡</span>
                   </div>
                   <div>
@@ -27,11 +27,11 @@ export function InstructorSection() {
                     <p className="text-muted-foreground text-sm">なべさん</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Floating Badge */}
-              <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
-                AI実践起業塾 主宰
+                {/* プロフィール枠内・右上（中央の顔・アイコンと横の引用パネルとは重ならない位置） */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-accent text-accent-foreground px-3 py-2 rounded-lg font-bold text-xs sm:text-sm shadow-lg max-w-[calc(100%-2rem)] text-left">
+                  AI実践起業塾 主宰
+                </div>
               </div>
             </div>
           </div>

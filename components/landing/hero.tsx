@@ -5,7 +5,7 @@ import { ArrowRight, Database, Code2, Shield } from "lucide-react"
 
 export function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden border-b border-border">
+    <section id="hero" className="relative overflow-hidden border-b border-border scroll-mt-20 lg:scroll-mt-24">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
@@ -14,7 +14,7 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 py-20 lg:py-32 lg:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start lg:items-center">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
@@ -71,11 +71,15 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Visual */}
-          <div className="relative">
-            <div className="relative bg-card border border-border rounded-lg p-8 shadow-lg">
+          {/* Visual — 絶対配置のはみ出しをやめ、左カラムの見出しと重ならないようにカード内に収める */}
+          <div className="relative lg:min-w-0">
+            <div className="relative bg-card border border-border rounded-lg p-6 sm:p-8 shadow-lg">
+              <div className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground px-3 py-1.5 rounded-md font-mono text-xs font-semibold shadow-md sm:text-sm sm:px-4 sm:py-2 sm:rounded-lg">
+                5日間集中
+              </div>
+
               {/* Code Editor Mock */}
-              <div className="space-y-4">
+              <div className="space-y-4 pt-8 sm:pt-10">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-400" />
                   <div className="w-3 h-3 rounded-full bg-yellow-400" />
@@ -107,23 +111,18 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Tech Stack Icons */}
-              <div className="absolute -bottom-6 -right-6 flex gap-3">
-                <div className="w-12 h-12 rounded-lg bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+              {/* Tech Stack Icons（カード内・下段） */}
+              <div className="flex flex-wrap justify-end gap-3 pt-6 mt-4 border-t border-border/60">
+                <div className="w-12 h-12 rounded-lg bg-primary text-primary-foreground flex items-center justify-center shadow-md">
                   <Database className="w-6 h-6" />
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-accent text-accent-foreground flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 rounded-lg bg-accent text-accent-foreground flex items-center justify-center shadow-md">
                   <Code2 className="w-6 h-6" />
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-green-600 text-white flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 rounded-lg bg-green-600 text-white flex items-center justify-center shadow-md">
                   <Shield className="w-6 h-6" />
                 </div>
               </div>
-            </div>
-
-            {/* Floating Badge */}
-            <div className="absolute -top-4 -left-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-mono text-sm font-semibold shadow-lg">
-              5日間集中
             </div>
           </div>
         </div>
